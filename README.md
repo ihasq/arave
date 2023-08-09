@@ -1,4 +1,4 @@
-# Arave - Text Editor
+# Arave - Text Editor (work in progress)
 
 ## Requirements
 + Node.js ^20.0.0
