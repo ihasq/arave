@@ -21,13 +21,5 @@ $ node ./scripts/install.js
 ```
 $ arave
 ```
-## Commands
-```
-$ arave --help
-
-	--open <FILE_PATH>,		-o <FILE_PATH> 		open file from path
-	--new,					-n					open blank editor
-	--newas <FILE_NAME>,	-a <FILE_NAME>		create new file
-```
 ## License
 This project is maintained under the MIT License
