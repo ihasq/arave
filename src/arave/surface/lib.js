@@ -1,0 +1,5 @@
+class RenderSurface {
+	constructor(init) {
+		
+	}
+}

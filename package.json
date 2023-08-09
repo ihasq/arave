@@ -1,0 +1,13 @@
+{
+	"name": "arave",
+	"version": "0.0.4",
+	"description": "",
+	"type": "commonjs",
+	"bin": "./build/js/main.js",
+	"pkg": {
+		"outputPath": "build/bin",
+		"compress": "GZip"
+	},
+	"author": "ihasq",
+	"license": "MIT"
+}
