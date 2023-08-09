@@ -1,5 +1,0 @@
-class RenderSurface {
-	constructor(init) {
-		
-	}
-}
