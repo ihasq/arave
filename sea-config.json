@@ -1,0 +1,1 @@
+{ "main": "./build/js/app.js", "output": "./build/bin/sea-prep.blob" }
