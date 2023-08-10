@@ -37,7 +37,7 @@ $ arave
 Work In Progress
 
 ## Credits
-Thanks to all the developers who are developing and managing these projects
+Thanks to all brilliant developers, who maintains these great open-source projects:
 ### [vercel/pkg](https://github.com/vercel/pkg#readme)&nbsp;&nbsp;|&nbsp;&nbsp;[evanw/esbuild](https://github.com/evanw/esbuild#readme)&nbsp;&nbsp;|&nbsp;&nbsp;[npm/cli](https://github.com/npm/cli#readme)&nbsp;&nbsp;|&nbsp;&nbsp;[nodejs/node](https://github.com/nodejs/node#readme)
 
 ## License
