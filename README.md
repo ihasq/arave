@@ -13,8 +13,8 @@ $ cd arave
 
 2\. Run build & install script
 ```
-$ node ./scripts/build.js
-$ node ./scripts/install.js
+$ node scripts/build
+$ node scripts/install
 ```
 
 3\. Run Arave at anywhere
