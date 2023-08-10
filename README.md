@@ -8,23 +8,31 @@
 + Node.js ^16.15.0
 + npm with npx
 
-#### 1\. Clone
-Clone git repo.
-```sh [unix]
-$ git clone https://github.com/ihasq/arave.git
-$ cd arave
+#### 1\. Get Source Code
+Download source code with ```curl```, then extract zip file with ```tar```.\
+on UNIX:
+```
+$ curl -L -O https://github.com/ihasq/arave/archive/refs/heads/main.zip
+$ unzip main.zip
+$ cd arave-main
+```
+on Windows:
+```
+> curl -L -O https://github.com/ihasq/arave/archive/refs/heads/main.zip
+> tar -xf main.zip
+> cd arave-main
 ```
 
 #### 2\. Build
 Run build script. then the executable will be placed in ```./build/arave(.exe)```
 ```
-$ node ./scripts/build
+node ./scripts/build
 ```
 
 #### 3\. Install
 Run installation script. root required.
 ```
-$ node ./scripts/install
+node ./scripts/install
 ```
 
 #### 4\. Run
