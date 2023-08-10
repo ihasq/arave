@@ -1,12 +1,13 @@
 const { execSync } = require("node:child_process");
 const { platform } = require("node:os");
 
+const isWin = (platform() === "win32");
+
 const query = {
-	isWin: (platform() === "win32"),
-	div: this.isWin? "&& ^" : ";",
-	extractor: this.isWin? "tar -xf" : "unzip",
-	remover: this.isWin? "del" : "rm",
-	rename: this.isWin? "rename" : "mv"
+	div: isWin? "&& ^" : ";",
+	extractor: isWin? "tar -xf" : "unzip",
+	remover: isWin? "del" : "rm",
+	rename: isWin? "rename" : "mv"
 };
 
 execSync(`
