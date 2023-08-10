@@ -36,7 +36,7 @@ $ arave
 ### Download Pre-built
 Work In Progress
 
-## Projects Used
+## Credits
 [vercel/pkg](https://github.com/vercel/pkg#readme)&nbsp;&nbsp;|&nbsp;&nbsp;[evanw/esbuild](https://github.com/evanw/esbuild#readme)&nbsp;&nbsp;|&nbsp;&nbsp;[npm/cli](https://github.com/npm/cli#readme)&nbsp;&nbsp;|&nbsp;&nbsp;[nodejs/node](https://github.com/nodejs/node#readme)
 
 ## License
