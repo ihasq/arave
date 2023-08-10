@@ -1,6 +1,9 @@
 # Arave - Text Editor (work in progress)
+
 ## Installation
+
 ### Build from scripts
+
 #### 0\. Check these requirements:
 + Node.js ^16.15.0
 + npm with npx
@@ -13,13 +16,13 @@ $ cd arave
 ```
 
 #### 2\. Build
-Run build script. then the executable will be placed in ```./build/arave```
+Run build script. then the executable will be placed in ```./build/arave(.exe)```
 ```
 $ node ./scripts/build
 ```
 
 #### 3\. Install
-Run installation script. This script copies executable to ```/usr/local/bin```.
+Run installation script. root required.
 ```
 $ node ./scripts/install
 ```
@@ -29,5 +32,9 @@ Run Arave at anywhere
 ```
 $ arave
 ```
+
+### Download Pre-built
+Work In Progress
+
 ## License
 This project is maintained under the MIT License
