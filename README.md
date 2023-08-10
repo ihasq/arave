@@ -4,7 +4,7 @@
 
 ### Build from scripts
 
-#### 0\. Check these requirements:
+#### 0\. Requirements
 + Node.js ^16.15.0
 + npm with npx
 
