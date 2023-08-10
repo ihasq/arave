@@ -1,7 +1,6 @@
 {
 	"name": "arave",
 	"version": "0.0.4",
-	"description": "",
 	"type": "commonjs",
 	"bin": "./src/main.js",
 	"pkg": {
