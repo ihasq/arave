@@ -1,5 +1,7 @@
 const { execSync } = require("child_process");
 const { platform, arch } = require("os");
+const rcedit = require("rcedit")
+
 execSync(`npx esbuild ./src/main.js --bundle --minify --outfile=build/arave.js --platform=node`)
 execSync(`npx pkg . --target node18-${
 	(platform => {
@@ -18,3 +20,10 @@ execSync(`npx pkg . --target node18-${
 		}
 	})(arch())
 }`);
+switch(platform()) {
+	case "win32": 
+		rcedit("./build/arave.exe", {
+			icon
+		})
+	break;
+}

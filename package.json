@@ -8,5 +8,8 @@
 		"compress": "GZip"
 	},
 	"author": "ihasq",
-	"license": "MIT"
+	"license": "MIT",
+	"devDependencies": {
+		"rcedit": "^3.1.0"
+	}
 }
