@@ -6,15 +6,14 @@ const query = {
 	div: this.isWin? "&& ^" : ";",
 	extractor: this.isWin? "tar -xf" : "unzip",
 	remover: this.isWin? "del" : "rm",
-	renameFile: this.isWin? "" : "arave-main.zip",
-	rename: this.isWin? "rename arave-main arave" : "mv arave-main.zip arave.zip"
+	rename: this.isWin? "rename" : "mv"
 };
 
 execSync(`
 	curl -L -O https://github.com/ihasq/arave/archive/refs/heads/main.zip ${query.div}
 	${query.extractor} main.zip ${query.div}
 	${query.remover} main.zip ${query.div}
-	${query.rename} ${query.div}
+	${query.rename} arave-main arave ${query.div}
 	cd arave ${query.div}
 	node ./scripts/build ${query.div}
 	cd ../
