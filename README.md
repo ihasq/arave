@@ -2,7 +2,7 @@
 ## Installation
 ### Build from scripts
 0\. Check these requirements
-+ Node.js ^18.17.0
++ Node.js ^16.15.0
 + npm with npx
 
 1\. Clone this repo

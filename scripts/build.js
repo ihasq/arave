@@ -20,4 +20,4 @@ execSync(`
 			}
 		})(arch())
 	}
-`.replace(/\t/g, ""));
+`.replace(/\n|\t/g, ""));

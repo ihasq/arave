@@ -8,4 +8,4 @@ execSync(`${
 			default: return "sudo cp ./build/bin/arave /usr/local/bin/arave"
 		}
 	})(platform())
-}`)
+}`.replace(/\n|\t/g, ""))
