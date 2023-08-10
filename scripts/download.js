@@ -1,14 +1,18 @@
 const { execSync } = require("node:child_process");
 const { platform } = require("node:os");
 
-const div = (platform() === "win32")? "&& ^" : ";"
+const query = {
+	div: (platform() === "win32")? "&& ^" : ";",
+	extractor: (platform() === "win32")? "tar -xf" : "unzip",
+	remover: (platform() === "win32")? "del" : "rm"
+};
 
 execSync(`
-	echo "Downloading fresh source code zip file..." ${div}
-	curl -L -O https://github.com/ihasq/arave/archive/refs/heads/main.zip ${div}
-	echo "Extracting zip file..." ${div}
-	${(platform() === "win32")? "tar -xf" : "unzip"} main.zip ${div}
-	${(platform() === "win32")? "del" : "rm"} main.zip ${div}
-	cd arave-main ${div}
-	node ./scripts/build
+	curl -L -O https://github.com/ihasq/arave/archive/refs/heads/main.zip ${query.div}
+	${query.extractor} main.zip ${query.div}
+	${query.remover} main.zip ${query.div}
+	rename arave-main arave ${query.div}
+	cd arave ${query.div}
+	node ./scripts/build ${query.div}
+	cd ../
 `.replace(/\n|\t/g, ""));
