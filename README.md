@@ -37,7 +37,7 @@ $ arave
 Work In Progress
 
 ## Projects Used
-[```vercel/pkg```](https://github.com/vercel/pkg#readme)&nbsp;&nbsp;|&nbsp;&nbsp;[```evanw/esbuild```](https://github.com/evanw/esbuild#readme)&nbsp;&nbsp;|&nbsp;&nbsp;[```npm/cli```](https://github.com/npm/cli#readme)&nbsp;&nbsp;|&nbsp;&nbsp;[```nodejs/node```](https://github.com/nodejs/node#readme)
+[vercel/pkg](https://github.com/vercel/pkg#readme)&nbsp;&nbsp;|&nbsp;&nbsp;[evanw/esbuild](https://github.com/evanw/esbuild#readme)&nbsp;&nbsp;|&nbsp;&nbsp;[npm/cli](https://github.com/npm/cli#readme)&nbsp;&nbsp;|&nbsp;&nbsp;[nodejs/node](https://github.com/nodejs/node#readme)
 
 ## License
 This project is maintained under the MIT License
