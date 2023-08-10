@@ -3,9 +3,9 @@
 	"version": "0.0.4",
 	"description": "",
 	"type": "commonjs",
-	"bin": "./build/js/main.js",
+	"bin": "./src/main.js",
 	"pkg": {
-		"outputPath": "build/bin",
+		"outputPath": "build",
 		"compress": "GZip"
 	},
 	"author": "ihasq",

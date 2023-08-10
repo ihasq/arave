@@ -4,8 +4,8 @@ const { platform } = require("os");
 execSync(`${
 	((platform) => {
 		switch(platform) {
-			case "win32": return ""
-			default: return "sudo cp ./build/bin/arave /usr/local/bin/arave"
+			case "win32":	return ""
+			default:		return "sudo cp ./build/arave /usr/local/bin/arave"
 		}
 	})(platform())
 }`.replace(/\n|\t/g, ""))
