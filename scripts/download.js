@@ -1,5 +1,5 @@
 const { execSync } = require("node:child_process");
-const { platform, platform } = require("node:os");
+const { platform } = require("node:os");
 
 const cmddiv = (platform() === "windows")? "&& ^" : ";"
 
