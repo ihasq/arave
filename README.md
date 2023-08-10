@@ -3,13 +3,18 @@
 ## Installation
 
 ### Build from scripts
-
-#### 0\. Requirements
+#### Requirements
 + Node.js ^16.15.0
 + npm with npx
 
+
+Good news! you can automatically download, extract, and build Arave by running this command in your shell.
+```
+curl https://github.com/ihasq/arave/raw/main/scripts/setup.js | node
+```
+or you can follow these steps manually to build same application:
 #### 1\. Get Source Code
-Download source code with ```curl```, then extract zip file with ```tar```.\
+Download source code with ```curl```, then extract zip file.\
 on UNIX:
 ```
 $ curl -L -O https://github.com/ihasq/arave/archive/refs/heads/main.zip
