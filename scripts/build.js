@@ -20,10 +20,10 @@ execSync(`npx pkg . --target node18-${
 		}
 	})(arch())
 }`);
-switch(platform()) {
-	case "win32": 
-		rcedit("./build/arave.exe", {
-			icon
-		})
-	break;
-}
+// switch(platform()) {
+// 	case "win32": 
+// 		rcedit("./build/arave.exe", {
+// 			icon
+// 		})
+// 	break;
+// }
