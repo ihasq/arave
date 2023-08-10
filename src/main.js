@@ -2,8 +2,8 @@
 
 import { ARAVE } from "./arave/lib.js"
 
-import process from "process"
-import tty from "tty"
+import process from "node:process"
+import tty from "node:tty"
 
 if(!process.stdout.isTTY && (!!tty) && (!!process)) {
 	process.exit(0)
@@ -16,9 +16,10 @@ let output = "";
 process.stdin.setRawMode(true);
 process.stdin.setEncoding('utf8');
 process.stdout.write(ARAVE.term.showAlternate);
-process.stdout.write(ARAVE.term.cursor.reset);
 process.stdout.write(ARAVE.term.enableBeamCursor);
 process.stdout.write(ARAVE.term.clear);
+process.stdout.write(ARAVE.term.cursor.reset);
+// ARAVE.setup.readcfg();
 
 process.stdin.on('data', key => {
 

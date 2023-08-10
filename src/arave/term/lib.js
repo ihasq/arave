@@ -1,9 +1,9 @@
-import settings from "../../../arave.config.js"
+// import settings from "../../../arave.config.js"
 
 export const term = {
 	showAlternate: Buffer.from("\x1b[?1049h"),
 	hideAlternate: Buffer.from("\x1b[?1049l"),
-	enableBeamCursor: Buffer.from(`\x1b[${settings.editor.cursor.type} q`),
+	enableBeamCursor: Buffer.from(`\x1b[6 q`),
 	disableBeamCursor: Buffer.from("\x1b[0 q"),
 	getLocator: Buffer.from([0x1b, 0x5b, ]),
 	clear: Buffer.from("\x1b[2"),

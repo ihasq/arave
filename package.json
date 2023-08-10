@@ -2,7 +2,7 @@
 	"name": "arave",
 	"version": "0.0.4",
 	"type": "commonjs",
-	"bin": "./src/main.js",
+	"bin": "./build/main.js",
 	"pkg": {
 		"outputPath": "build",
 		"compress": "GZip"

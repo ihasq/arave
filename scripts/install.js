@@ -1,5 +1,5 @@
-const { execSync } = require("child_process");
-const { platform } = require("os");
+const { execSync } = require("node:child_process");
+const { platform } = require("node:os");
 
 execSync(`${
 	((platform) => {
@@ -7,7 +7,7 @@ execSync(`${
 			case "win32":	return ""
 			default:		return `
 				sudo cp ./build/arave /usr/local/bin/arave;
-				mkdir $HOME/.arave;
+				echo "" > $HOME/.arave/arave.config.js;
 			`
 		}
 	})(platform())

@@ -2,6 +2,7 @@ const { execSync } = require("child_process");
 const { platform, arch } = require("os");
 
 execSync(`
+	npx esbuild ./src/main.js --bundle --minify --outdir=build --platform=node;
 	npx pkg . --target node18-${
 		(platform => {
 			switch(platform) {
