@@ -11,21 +11,27 @@
 Good news! you can automatically download, extract, and build Arave by running this command in your shell.
 ```
 curl https://rawgithubusercontent.com/ihasq/arave/raw/main/releases/setup.js | node
+
+# on unix
+bash setup.sh
+
+# on windows
+setup.bat
 ```
 or you can follow these steps manually to build same application:
 #### 1\. Get Source Code
 Download source code with ```curl```, then extract zip file.\
 on UNIX:
 ```
-$ curl -L -O https://github.com/ihasq/arave/archive/refs/heads/main.zip
-$ unzip main.zip
-$ cd arave-main
+curl -L -O https://github.com/ihasq/arave/archive/refs/heads/main.zip
+unzip main.zip
+cd arave-main
 ```
 on Windows:
 ```
-> curl -L -O https://github.com/ihasq/arave/archive/refs/heads/main.zip
-> tar -xf main.zip
-> cd arave-main
+curl -L -O https://github.com/ihasq/arave/archive/refs/heads/main.zip
+tar -xf main.zip
+cd arave-main
 ```
 
 #### 2\. Build
