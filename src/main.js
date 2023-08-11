@@ -19,17 +19,13 @@ stdin.on('data', key => {
 
 	switch(key) {
 		case "\x03":
-			console.log('Exit process');
-
 			stdout.write(format(ARAVE.term.hideAlternate + ARAVE.term.disableBeamCursor));
-
 			exit(0);
-
 		case "\r":
 			stdout.write(format(ARAVE.term.clear));
-
-		// backspace
+			break;
 		case "\x7F":
+			// this is a backspace
 			break;
 
 		default: 
