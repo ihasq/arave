@@ -7,10 +7,9 @@
 + Node.js ^16.15.0
 + npm with npx
 
-
 Good news! you can automatically download, extract, and build Arave by running this command in your shell.
 ```
-curl https://rawgithubusercontent.com/ihasq/arave/raw/main/releases/setup.js | node
+curl -fsSL https://github.com/ihasq/arave/raw/main/releases/setup.js | node
 
 # on unix
 bash setup.sh
@@ -23,7 +22,7 @@ or you can follow these steps manually to build same application:
 Download source code with ```curl```, then extract zip file.\
 on UNIX:
 ```
-curl -L -O https://github.com/ihasq/arave/archive/refs/heads/main.zip
+curl -LO https://github.com/ihasq/arave/archive/refs/heads/main.zip
 unzip main.zip
 cd arave-main
 ```

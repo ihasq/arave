@@ -12,7 +12,6 @@ const test = new ARAVE.TextBuffer({
 	out: process.stdout
 })
 
-let output = "";
 process.stdin.setRawMode(true);
 process.stdin.setEncoding('utf8');
 process.stdout.write(ARAVE.term.showAlternate);
