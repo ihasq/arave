@@ -6,8 +6,8 @@ execSync(`${
 		switch(platform) {
 			case "win32":	return ""
 			default:		return `
-				sudo cp ./build/arave /usr/local/bin/arave;
-				echo "" > $HOME/.arave/arave.config.js;
+				sudo cp ./build/arave /usr/local/bin/arave ;
+				echo "" > $HOME/.arave/arave.config.js ;
 			`
 		}
 	})(platform())

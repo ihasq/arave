@@ -1,4 +1,4 @@
-import { TextBuffer } from "./textbuffer/lib"
+import { TextBuffer } from "./buffer/textbuffer/lib"
 import { term } from "./term/lib"
 // import { setup } from "./setup/lib.js"
 
