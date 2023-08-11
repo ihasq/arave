@@ -28,7 +28,7 @@ const keyFn = {
 	"\x7F"() {}
 }
 
-stdin.on('data', (key: string) => {
+stdin.on('data', key => {
 	if(!keyFn[key]) {
 		stdout.write(key);
 	} else {

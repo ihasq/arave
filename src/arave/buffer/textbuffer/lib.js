@@ -61,7 +61,7 @@ export class TextBuffer {
 
 	set configuration(init) {}
 
-	set text(string: string) {
+	set text(string) {
 
 		this.#private.buffer.string[2] = string;
 	}
@@ -136,12 +136,12 @@ export class TextBuffer {
 		}
 	}
 
-	push(string: string) {
+	push(string) {
 		this.#private.buffer.string[2] += string;
 	}
 
-	undo(step: number) { for(let i = 0; i < step; i++) {} }
+	undo(step) { for(let i = 0; i < step; i++) {} }
 
-	redo(step: number) {}
+	redo(step) {}
 
 };
