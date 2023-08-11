@@ -12,7 +12,7 @@ if(!stdout.isTTY && (!!tty) && (!!process)) {
 
 stdin.setRawMode(true);
 stdin.setEncoding('utf8');
-stdout.write(format(ARAVE.term.showAlternate + ARAVE.term.clear + ARAVE.term.cursor.moveTo(0,0) + ARAVE.term.enableBeamCursor));
+stdout.write(format(ARAVE.term.showAlternate + ARAVE.term.clear + ARAVE.term.cursor.moveTo(0, 0) + ARAVE.term.enableBeamCursor));
 // ARAVE.setup.readcfg();
 
 stdin.on('data', key => {
@@ -22,7 +22,7 @@ stdin.on('data', key => {
 			stdout.write(format(ARAVE.term.hideAlternate + ARAVE.term.disableBeamCursor));
 			exit(0);
 		case "\r":
-			stdout.write(format(ARAVE.term.clear));
+			stdout.write(format(ARAVE.term.clear + ARAVE.term.cursor.moveTo(0, 0)));
 			break;
 		case "\x7F":
 			// this is a backspace
