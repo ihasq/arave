@@ -2,7 +2,7 @@ const { execSync } = require("child_process");
 const { platform, arch } = require("os");
 // const rcedit = require("rcedit")
 
-execSync(`npx esbuild ./src/main.js --bundle --minify --outfile=build/arave.js --platform=node`)
+execSync(`npx esbuild ./src/main.js --bundle --minify --outfile=build/arave.js --platform=node --log-level=silent`)
 execSync(`npx pkg . --target node18-${
 	(platform => {
 		switch(platform) {
