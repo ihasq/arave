@@ -14,7 +14,7 @@ const query = {
 writeFileSync(`setup.${query.file}`, `
 	echo 📦 Downloading fresh source code... ${query.div}
 	curl -L -O https://github.com/ihasq/arave/archive/refs/heads/main.zip ${query.div}
-	echo 🔧 Extracting zip... ${query.div} ${query.div}
+	echo 🔧 Extracting zip... ${query.div}
 	${query.extractor} main.zip ${query.div}
 	${query.remover} main.zip ${query.div}
 	${query.rename} arave-main arave ${query.div}
