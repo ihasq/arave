@@ -1,5 +1,3 @@
-// import settings from "../../../arave.config.js"
-
 export const term = {
 	showAlternate: "\x1b[?1049h",
 	hideAlternate: "\x1b[?1049l",
@@ -7,7 +5,7 @@ export const term = {
 	disableBeamCursor: "\x1b[0 q",
 	clear: "\x1b[2J",
 	cursor: {
-		moveTo: (line, column) => `\x1b[${line};${column}H`,
+		moveTo: (line: number, column: number) => `\x1b[${line};${column}H`,
 	},
 	report: "\x1b[0c"
 }

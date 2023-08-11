@@ -61,7 +61,8 @@ export class TextBuffer {
 
 	set configuration(init) {}
 
-	set text(string) {
+	set text(string: string) {
+
 		this.#private.buffer.string[2] = string;
 	}
 
@@ -70,7 +71,7 @@ export class TextBuffer {
 	}
 
 	get blob() {
-		return new Promise()
+		return 
 	}
 
 	get textAsStream() {
@@ -79,16 +80,30 @@ export class TextBuffer {
 		})
 	}
 
-	get nextChunk() {}
-	get nextLine() {}
+	get nextChunk() {
+		return
+	}
 
-	get prevChunk() {}
-	get prevLine() {}
+	get nextLine() {
+		return
+	}
+
+
+	get prevChunk() {
+		return
+	}
+
+	get prevLine() {
+		return
+	}
+
 
 	getLine(init) {}
+
 	getSelection(init) {} // init.search = "Lorem"
 	// recieveChunk(string) {
 	// }
+
 	input(block) { return }
 
 	/*
@@ -100,9 +115,13 @@ export class TextBuffer {
 
 	*/
 
+
 	up(step) {}
+
 	down(step) {}
+
 	forward(step) {}
+
 	back(step) {}
 
 	moveCaret(init) {
@@ -117,11 +136,12 @@ export class TextBuffer {
 		}
 	}
 
-	push(string) {
+	push(string: string) {
 		this.#private.buffer.string[2] += string;
 	}
 
-	undo(step) { for(let i = 0; i < step; i++) {} }
-	redo(step) {}
+	undo(step: number) { for(let i = 0; i < step; i++) {} }
+
+	redo(step: number) {}
 
 };

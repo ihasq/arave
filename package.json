@@ -8,5 +8,8 @@
 		"compress": "GZip"
 	},
 	"author": "ihasq",
-	"license": "MIT"
+	"license": "MIT",
+	"dependencies": {
+		"@vscode/textbuffer": "^1.0.0"
+	}
 }

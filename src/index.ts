@@ -1,6 +1,7 @@
 "use strict";
 
-import { ARAVE } from "./arave/lib.js"
+import { ARAVE } from "./arave/lib"
+import { PieceTreeTextBufferBuilder, DefaultEndOfLine } from "@vscode/textbuffer/src/index"
 
 import { stdin, stdout, exit } from "node:process"
 import { format } from "node:util"
@@ -27,7 +28,7 @@ const keyFn = {
 	"\x7F"() {}
 }
 
-stdin.on('data', key => {
+stdin.on('data', (key: string) => {
 	if(!keyFn[key]) {
 		stdout.write(key);
 	} else {
