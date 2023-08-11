@@ -5,7 +5,7 @@ export const term = {
 	disableBeamCursor: "\x1b[0 q",
 	clear: "\x1b[2J",
 	cursor: {
-		moveTo: (line: number, column: number) => `\x1b[${line};${column}H`,
+		moveTo: (line, column) => `\x1b[${line};${column}H`,
 	},
 	report: "\x1b[0c"
 }
