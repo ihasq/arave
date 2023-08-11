@@ -20,6 +20,6 @@ writeFileSync(`setup.${query.file}`, `
 	${query.rename} arave-main arave ${query.div}
 	cd arave ${query.div}
 	echo 🏗️ Building executable... ${query.div}
-	node ./scripts/build ${query.div}
+	npx esbuild ./scripts/build.ts | node${query.div}
 	cd ../
 `.replace(/\n|\t/g, ""))
