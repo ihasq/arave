@@ -1,6 +1,6 @@
 "use strict";
 
-import { arave as ARAVE } from "./arave/lib"
+import { ARAVE } from "./arave/lib"
 import process from "node:process"
 import util from "node:util"
 import { PieceTreeTextBufferBuilder, DefaultEndOfLine } from "@vscode/textbuffer/src/index"
