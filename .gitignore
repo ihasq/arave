@@ -1,4 +1,3 @@
 /build/**
 !/build/.gitkeep
-dev.sh
 node_modules
