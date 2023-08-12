@@ -1,5 +1,5 @@
-const { execSync } = require("child_process");
-const { platform, arch } = require("os");
+const { execSync } = require("node:child_process");
+const { platform, arch } = require("node:os");
 // const rcedit = require("rcedit")
 
 execSync(`

@@ -1,4 +1,4 @@
-const { writeFileSync } = require("fs")
+const { writeFileSync } = require("node:fs")
 const { platform } = require("node:os");
 
 const isWin = (platform() === "win32");
@@ -20,6 +20,6 @@ writeFileSync(`setup.${query.file}`, `
 	${query.rename} arave-main arave ${query.div}
 	cd arave ${query.div}
 	echo 🏗️ Building executable... ${query.div}
-	npx esbuild ./scripts/build.ts | node${query.div}
+	node scripts/node/build${query.div}
 	cd ../
 `.replace(/\n|\t/g, ""))

@@ -2,7 +2,7 @@ import { TextBuffer } from "./buffer/textbuffer/lib"
 import { term } from "./term/lib"
 // import { setup } from "./setup/lib.js"
 
-export const ARAVE = {
+export const arave = {
 	term,
 	TextBuffer,
 	// setup
