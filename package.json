@@ -9,6 +9,11 @@
 	},
 	"author": "ihasq",
 	"license": "MIT",
+	"scripts": {
+		"dev": "node scripts/node/build ;build/arave",
+		"build": "node scripts/node/build",
+		"install": "node scripts/install"
+	},
 	"dependencies": {
 		"@vscode/textbuffer": "^1.0.0"
 	}

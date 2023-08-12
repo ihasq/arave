@@ -39,13 +39,13 @@ cd arave-main
 #### 2\. Build
 Run build script. then the executable will be placed in ```./build/arave(.exe)```
 ```
-node ./scripts/build
+npm run build
 ```
 
 #### 3\. Install
 Run installation script. root required.
 ```
-node ./scripts/install
+npm run install
 ```
 
 #### 4\. Run
