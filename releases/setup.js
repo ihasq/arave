@@ -1,9 +1,10 @@
+const { execSync } = require("node:child_process");
 const { writeFileSync } = require("node:fs")
 const { platform } = require("node:os");
 
 const isWin = (platform() === "win32");
 
-writeFileSync(`setup.${isWin? "bat" : "sh"}`, `
+execSync(`
 	echo 📦 Downloading fresh source code...
 	curl -LO https://github.com/ihasq/arave/archive/refs/heads/main.zip
 	echo 🔧 Extracting zip...
@@ -15,4 +16,4 @@ writeFileSync(`setup.${isWin? "bat" : "sh"}`, `
 	npm run build
 	npm run install
 	cd ../
-`.replace(/\t/g, ""))
+`.replace(/\t/g, ""), { stdio: 'inherit' })
