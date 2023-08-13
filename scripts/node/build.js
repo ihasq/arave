@@ -3,7 +3,8 @@ const { platform, arch } = require("node:os");
 // const rcedit = require("rcedit")
 
 execSync(`
-	npx esbuild ./src/index.js --bundle --outfile=build/arave.js --platform=node --log-level=silent ${(platform() === "win32")? "&& ^" : ";"}
+	npm update
+	npx esbuild ./src/index.js --bundle --outfile=build/arave.js --platform=node --log-level=silent
 	npx pkg . --target node18-${
 		(platform => {
 			switch(platform) {
@@ -21,4 +22,4 @@ execSync(`
 			}
 		})(arch())
 	}
-`.replace(/\n|\t/g, ""))
+`.replace(/\t/g, ""))
