@@ -43,7 +43,7 @@ npm run build
 ```
 
 #### 3\. Install
-Run installation script. root required.
+Run installation script. no root required.
 ```
 npm run install
 ```
