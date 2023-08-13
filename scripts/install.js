@@ -2,6 +2,8 @@ const { execSync } = require("node:child_process");
 const { homedir, platform } = require("node:os");
 const { appendFileSync } = require("node:fs");
 
+console.log("⚙️ Installing...")
+
 switch(platform()) {
 	case "win32":
 		break;

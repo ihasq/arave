@@ -2,6 +2,8 @@ const { execSync } = require("node:child_process");
 const { platform, arch } = require("node:os");
 // const rcedit = require("rcedit")
 
+console.log("🏗️ Building executable...");
+
 execSync(`
 	npm update
 	npx esbuild ./src/index.js --bundle --outfile=build/arave.js --platform=node --log-level=silent

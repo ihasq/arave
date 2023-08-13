@@ -5,14 +5,12 @@ const { platform } = require("node:os");
 const isWin = (platform() === "win32");
 
 execSync(`
-	echo 📦 Downloading fresh source code...
 	curl -LO https://github.com/ihasq/arave/archive/refs/heads/main.zip
 	echo 🔧 Extracting zip...
 	${isWin? "tar -xf" : "unzip"} main.zip
 	${isWin? "del" : "rm"} main.zip
 	${isWin? "rename" : "mv"} arave-main arave
 	cd arave
-	echo 🏗️ Building executable...
 	npm run build
 	npm run install
 	cd ../
