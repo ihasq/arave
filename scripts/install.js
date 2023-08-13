@@ -22,6 +22,7 @@ switch(platform()) {
 		} catch(error) {
 			if(error.status) {
 				appendFileSync(`${homedir()}/.bashrc`, `
+
 					# arave
 					export ARAVE_INSTALL="$HOME/.arave"
 					export PATH=$ARAVE_INSTALL/bin:$PATH
