@@ -2,24 +2,23 @@ const { execSync } = require("node:child_process");
 const { homedir, platform } = require("node:os");
 const { appendFileSync } = require("node:fs");
 
-execSync(`${
-	((platform) => {
-		switch(platform) {
-			case "win32":	return ""
-			default:		return `
-				cp ./build/arave ~/.arave/bin/arave ;
-				echo "" > $HOME/.arave/arave.config.js ;
-			`
-		}
-	})(platform())
-}`.replace(/\n|\t/g, ""));
-
 switch(platform()) {
 	case "win32":
 		break;
 	default:
 		try {
-			execSync("grep -q \"# arave\" ~/.bashrc")
+			execSync(`
+				cp ./build/arave ~/.arave/bin/arave
+				echo "" > $HOME/.arave/arave.config.js
+				grep -q \"# arave\" ${(()=>{
+					const shellName = execSync("echo $SHELL").toString()
+					if(shellName.includes("bash")) {
+						return "~/.bashrc"
+					} else if(shellName.includes("zsh")) {
+						return "~/.zshrc"
+					}
+				})()} ;
+			`.replace(/\t/g, ""));
 		} catch(error) {
 			if(error.status) {
 				appendFileSync(`${homedir()}/.bashrc`, `
@@ -29,5 +28,4 @@ switch(platform()) {
 				`.replace(/\t/g, ""));
 			}
 		}
-
 }
