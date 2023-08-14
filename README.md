@@ -4,6 +4,7 @@
 
 ### Build from scripts
 #### Requirements
++ Git
 + Node.js ^16.15.0
 + npm with npx
 

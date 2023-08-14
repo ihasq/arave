@@ -19,7 +19,7 @@ switch(platform()) {
 					} else if(shellName.includes("zsh")) {
 						return "~/.zshrc"
 					}
-				})()} ;
+				})()}
 			`.replace(/\t/g, ""));
 		} catch(error) {
 			if(error.status) {
@@ -27,7 +27,7 @@ switch(platform()) {
 
 					# arave
 					export ARAVE_INSTALL="$HOME/.arave"
-					export PATH=$ARAVE_INSTALL/bin:$PATH
+					export PATH=$ARAVE_INSTALL/build:$PATH
 				`.replace(/\t/g, ""));
 			}
 		}

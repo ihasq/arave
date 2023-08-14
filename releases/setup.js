@@ -1,17 +1,44 @@
 const { execSync } = require("node:child_process");
-const { writeFileSync } = require("node:fs")
-const { platform } = require("node:os");
+const { homedir, platform } = require("node:os");
+const { readFileSync, writeFileSync, appendFileSync, existsSync } = require("node:fs");
 
 const isWin = (platform() === "win32");
 
 execSync(`
-	curl -LO https://github.com/ihasq/arave/archive/refs/heads/main.zip
-	echo 🔧 Extracting zip...
-	${isWin? "tar -xf" : "unzip"} main.zip
-	${isWin? "del" : "rm"} main.zip
-	${isWin? "rename" : "mv"} arave-main arave
-	cd arave
+	cd $HOME
+	mkdir -p .arave
+	curl -fSL https://github.com/ihasq/arave/archive/refs/tags/arave.tar.gz | tar zxf - -C $HOME/.arave
+	cd $HOME/.arave/arave-arave
 	npm run build
-	npm run install
-	cd ../
 `.replace(/\t/g, ""), { stdio: 'inherit' })
+
+execSync(`
+	cd $HOME/.arave
+	${isWin? "rename" : "mv"} arave-arave ${(() => {
+		const version = JSON.parse(readFileSync(`${homedir()}/.arave/arave-arave/package.json`).toString()).version;
+		const shellName = execSync("echo $SHELL").toString(), rcName = shellName.includes("bash")? ".bashrc" : shellName.includes("zsh")? ".zshrc" : "";
+		if(!readFileSync(`${homedir()}/${rcName}`).toString().includes("# arave")){
+			appendFileSync(`${homedir()}/${rcName}`, `
+				# arave
+				export ARAVE_LATEST_VER=${version}
+				export ARAVE_INSTALL_DIR="$HOME/.arave"
+				export PATH=$ARAVE_INSTALL_DIR/$ARAVE_LATEST_VER/build:$PATH
+			`.replace(/\t/g, ""));
+		} else if((() => {
+			const parsedCurrentVersion = execSync("echo $ARAVE_LATEST_VER").toString().split("."), parsedLatestVersion = version.split(".")
+			for(let i = 0; i < 3; i++) {
+				if(Number(parsedCurrentVersion[i]) > Number(parsedLatestVersion[0])) {
+					return true;
+				}
+				return false;
+			}
+		})()) {
+			appendFileSync(`${homedir()}/.bashrc`, `
+				# arave
+				export ARAVE_LATEST_VER=${version}
+			`.replace(/\t/g, ""));
+		}
+		return version;
+	})()}
+
+`.replace(/\t/g, ""))
