@@ -1,9 +1,11 @@
 "use strict";
 
-import { ARAVE } from "./arave/lib"
+import { ARAVE } from "./lib"
 import process from "node:process"
 import util from "node:util"
 import { PieceTreeTextBufferBuilder, DefaultEndOfLine } from "@vscode/textbuffer/src/index"
+
+global.AraveRuntime = new ARAVE.Runtime();
 
 import tty from "node:tty"
 
@@ -25,6 +27,11 @@ const pieceTree = pieceTreeFactory.create(DefaultEndOfLine.LF);
 pieceTree.getLineCount(); // 2
 process.stdout.write(pieceTree.getLineContent(1) + "\n"); // 'abc'
 process.stdout.write(pieceTree.getLineContent(2)); // 'def'
+
+process.on("SIGWINCH", () => {
+	ARAVE.property.term.size.width = process.stdout.columns;
+	ARAVE.property.term.size.column = process.stdout.lines;
+} )
 // arave.setup.readcfg();
 
 const keyFn = {
@@ -39,6 +46,7 @@ const keyFn = {
 }
 
 process.stdin.on('data', key => {
+	ARAVE.editor.resolve(key)
 	if(!keyFn[key]) {
 		process.stdout.write(key);
 	} else {
