@@ -1,11 +1,14 @@
 "use strict";
 
-import { ARAVE } from "./lib/lib";
+import { ARAVE } from "./lib";
 
 import process from "node:process";
-import util from "node:util";
 
 import tty from "node:tty"
+
+if((!process.stdout.isTTY) && (!!tty)) {
+	exit(0)
+}
 
 process.stdin.setRawMode(true);
 process.stdin.setEncoding('utf8');
@@ -48,7 +51,3 @@ process.stdin.on('data', key => {
 		keyFn[key]();
 	};
 });
-
-if(!process.stdout.isTTY) {
-	exit(0)
-}
