@@ -6,9 +6,7 @@ import process from "node:process";
 
 import tty from "node:tty"
 
-if((!process.stdout.isTTY) && (!!tty)) {
-	exit(0)
-}
+if((!process.stdout.isTTY) && (!!tty)) exit(0);
 
 process.stdin.setRawMode(true);
 process.stdin.setEncoding('utf8');
