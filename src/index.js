@@ -12,7 +12,7 @@ if((!process.stdout.isTTY) && (!!tty)) {
 
 process.stdin.setRawMode(true);
 process.stdin.setEncoding('utf8');
-ARAVE.fmtout(ARAVE.term.showAlternate + ARAVE.term.clear + ARAVE.term.cursor.moveTo(0, 0) + ARAVE.term.enableBeamCursor);
+ARAVE.fmtout(ARAVE.term.showAlternate, ARAVE.term.clear, ARAVE.term.cursor.moveTo(0, 0), ARAVE.term.enableBeamCursor);
 
 const pieceTreeTextBufferBuilder = new ARAVE.VSCodeTextBuffer.PieceTreeTextBufferBuilder();
 pieceTreeTextBufferBuilder.acceptChunk('abc\n');
@@ -32,11 +32,11 @@ process.on("SIGWINCH", () => {
 
 const keyFn = {
 	"\x03"() {
-		ARAVE.fmtout(ARAVE.term.hideAlternate + ARAVE.term.disableBeamCursor);
+		ARAVE.fmtout(ARAVE.term.hideAlternate, ARAVE.term.disableBeamCursor);
 		process.exit(0);
 	},
 	"\r"() {
-		ARAVE.fmtout(ARAVE.term.clear + ARAVE.term.cursor.moveTo(0, 0));
+		ARAVE.fmtout(ARAVE.term.clear, ARAVE.term.cursor.moveTo(0, 0));
 	},
 	"\x7F"() {
 		// ARAVE.fmtTest()
