@@ -1,17 +1,37 @@
 const { execSync } = require("node:child_process");
-const { homedir, platform } = require("node:os");
+const { homedir, platform, arch } = require("node:os");
 const { readFileSync, writeFileSync, appendFileSync, existsSync } = require("node:fs");
 
 const isWin = (platform() === "win32");
-
+console.log("🏗️  Building executable...");
 execSync(`
 	cd $HOME
-	mkdir -p .arave
-	curl -fSL https://github.com/ihasq/arave/archive/refs/tags/arave.tar.gz | tar zxf - -C $HOME/.arave
+	mkdir -p ./.arave/archive
+	cd ./.arave/archive
+	curl -fSLO https://github.com/ihasq/arave/archive/refs/tags/arave.tar.gz
+	tar zxf arave.tar.gz -C $HOME/.arave
 	cd $HOME/.arave/arave-arave
-	npm run build
+	npm update
+	npx esbuild ./src/index.js --bundle --outfile=build/arave.js --platform=node --log-level=silent
+	npx pkg . --target node18-${
+		(platform => {
+			switch(platform) {
+				case "darwin":	return "macos";
+				case "win32":	return "win";
+				default:		return platform;
+			}
+		})(platform())
+	}-${
+		(arch => {
+			switch(arch) {
+				case "x64":		return arch;
+				case "arm64":	return arch;
+				default:		return;
+			}
+		})(arch())
+	}
 `.replace(/\t/g, ""), { stdio: 'inherit' })
-
+console.log("⚙️  Installing...")
 execSync(`
 	cd $HOME/.arave
 	${isWin? "rename" : "mv"} arave-arave ${(() => {
@@ -41,4 +61,8 @@ execSync(`
 		return version;
 	})()}
 
-`.replace(/\t/g, ""))
+`.replace(/\t/g, ""));
+console.log(`
+Arave Installed
+command $ arave to run
+`)

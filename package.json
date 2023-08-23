@@ -15,6 +15,7 @@
 		"install": "node scripts/install"
 	},
 	"dependencies": {
-		"@vscode/textbuffer": "^1.0.0"
+		"@vscode/textbuffer": "^1.0.0",
+		"eastasianwidth": "^0.2.0"
 	}
 }
