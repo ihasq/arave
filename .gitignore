@@ -1,4 +1,0 @@
-/build/**
-!/build/.gitkeep
-node_modules
-bc.txt
