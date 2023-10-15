@@ -1,4 +1,4 @@
-# Arave - Text Editor (work in progress)
+# Arave - VSCode-Based TUI Text Editor (work in progress)
 
 ## Installation
 
